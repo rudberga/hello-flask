@@ -5,6 +5,8 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
+# Route/view for each page in html, linked via href in html files
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -17,8 +19,15 @@ def about():
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")    
+    return render_template("contact.html")
 
+
+@app.route("/careers")
+def careers():
+    return render_template("careers.html")   
+
+
+# Get the flask app running "python3 run.py"
 
 if __name__ == "__main__":
     app.run(
